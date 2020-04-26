@@ -75,6 +75,7 @@ class MavenLocator {
 
   Optional<File> checkOnNoneWindows(Path mavenHomeLocation) {
     Path mvnBinPath = Paths.get(mavenHomeLocation.toString(), "mvn");
+
     File executable = toFile(mvnBinPath);
     if (executable.exists() && executable.isFile() && executable.canRead()) {
       return Optional.of(executable);
